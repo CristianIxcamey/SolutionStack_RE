@@ -9,7 +9,7 @@
     <h2>Register</h2>
     </div>
 
-    <form method="post" action="login.php">
+    <form method="post" action="register.php">
         <div class="input-group">
             <label>Email</label>
             <input type="text" name="email">
@@ -24,7 +24,7 @@
             <button type="submit" name="register" class="btn">Register</button>
         </div>
         <p>
-            Not a member yet? <a href="register.php">Sign up</a>
+            Alredy a member? <a href="login.php">Sign in</a>
         <p>
     <form>
     
