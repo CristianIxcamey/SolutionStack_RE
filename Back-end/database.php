@@ -3,7 +3,7 @@ class Database
 {
     //setting up variables that will make up the connection to the mySql database
     private $servername = "localhost";
-    private $database = "becontent";
+    private $database = "review";
     private $username = "root";
     private $password = "";
     public $connection;
