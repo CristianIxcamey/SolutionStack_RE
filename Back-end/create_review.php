@@ -7,7 +7,7 @@ header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Credentials: true");
 
 //this imports the connector as well as the contractor class 
-include_once './database.php';
+include_once '../Back-end/database.php';
 class reviewCreator
 {
 
@@ -19,8 +19,8 @@ class reviewCreator
         $reviewID = $movieReview->movieId . $userid;
         $database = new Database();
         $connectionDB = $database->ConnectToDatabase();
-        $sql = "INSERT INTO `reviews` (`id`, `movieId`, `userId`, `rating`, `reviewMessage`) VALUES
-         ('" . $reviewID . "', '" . $movieReview->movieId . "', '" . $userid . "', '" . $movieReview->rating . "', '" . $movieReview->reviewMessage . "')";
+        $sql = "INSERT INTO `reviews` (`id`, `movieId`, `userId`, `rating`, `reviewMessage`, `movieName`) VALUES
+         ('" . $reviewID . "', '" . $movieReview->movieId . "', '" . $userid . "', '" . $movieReview->rating . "', '" . $movieReview->reviewMessage . "', '" . $movieReview->movieName . "')";
         if ($connectionDB->query($sql) === true) {
             return "Record was Created";
         } else {
