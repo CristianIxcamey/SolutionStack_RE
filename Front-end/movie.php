@@ -12,12 +12,19 @@
     $userId = "newUser123";
     $movieid = "newMovie123";
     $movieName = "Kong";
-    $username = "username";
+    $username = "newUsername";
 
     ?>
 
     <form name="form" action="../Back-end/create_review_post.php" method="post">
-        <input type="text" name="rating" placeholder="Rating">
+        <label for="rating">Review Rating:</label>
+        <select name="rating" id="pages">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
         <input type="text" name="reviewMessage" placeholder="Review Message">
         <input type='hidden' name='userId' value='<?php echo "$userId"; ?>' />
         <input type='hidden' name='movieid' value='<?php echo "$movieid"; ?>' />

@@ -19,8 +19,8 @@ class reviewCreator
         $reviewID = $movieReview->movieId . $userid;
         $database = new Database();
         $connectionDB = $database->ConnectToDatabase();
-        $sql = "INSERT INTO `reviews` (`id`, `movieId`, `userId`, `rating`, `reviewMessage`, `movieName`) VALUES
-         ('" . $reviewID . "', '" . $movieReview->movieId . "', '" . $userid . "', '" . $movieReview->rating . "', '" . $movieReview->reviewMessage . "', '" . $movieReview->movieName . "')";
+        $sql = "INSERT INTO `reviews` (`id`, `movieId`, `userId`, `rating`, `description`, `movieName`, `username`) VALUES
+         ('" . $reviewID . "', '" . $movieReview->movieId . "', '" . $userid . "', '" . $movieReview->rating . "', '" . $movieReview->reviewMessage . "', '" . $movieReview->movieName . "', '" . $movieReview->username . "')";
         if ($connectionDB->query($sql) === true) {
             return "Record was Created";
         } else {

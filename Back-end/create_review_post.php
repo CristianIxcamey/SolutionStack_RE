@@ -5,6 +5,7 @@ $review->movieId = $_POST['movieid'];
 $review->rating = $_POST['rating'];
 $review->reviewMessage = $_POST['reviewMessage'];
 $review->movieName = $_POST['movieName'];
+$review->username = $_POST['username'];
 
 $reviewer = new reviewCreator();
 

@@ -1,9 +1,10 @@
 <?php
 class reader
 {
-  public function read($movieId) {
+  public function read($movieId)
+  {
     include_once 'database.php';
-    
+
     $database = new Database();
     $connectionDB = $database->ConnectToDatabase();
 
@@ -19,7 +20,7 @@ class reader
           "movieId" => $movieId,
           "userId" => $userId,
           "username" => $username,
-          "rating" => $rating,  
+          "rating" => $rating,
           "description" => $description,
         );
         array_push($dataArray["data"], $dataItem);
@@ -30,4 +31,3 @@ class reader
     }
   }
 }
-?>
