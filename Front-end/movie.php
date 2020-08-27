@@ -9,11 +9,10 @@
 
 <body>
     <?php
-    $userId = "newUser123";
+    $userId = $_COOKIE['login'];
     $movieid = "newMovie123";
     $movieName = "Kong";
-    $username = "newUsername";
-
+    $username = $_COOKIE['username'];
     ?>
 
     <form name="form" action="../Back-end/create_review_post.php" method="post">
