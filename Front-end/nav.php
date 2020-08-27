@@ -22,7 +22,6 @@
       <div id="login"><a href="login.php">Login</a></div>
       <div id="signup"><a href="register.php">Sign Up</a></div>
     </div>
-    <div id="profile" *ngIf='loggedin==true'><a href="/profile">Profile</a></div>
-    <!-- <button (click)='this.firebaseService.signOut()'>Log Out</button> -->
+    <div id="profile"><a href="profile.php">Profile</a></div>
   </nav>
 </div>
