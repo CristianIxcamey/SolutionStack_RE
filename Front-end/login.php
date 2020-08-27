@@ -1,10 +1,13 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Make an Account to Review Movies</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body> -->
+<?php
+require "header.php";
+?>
     <div class="header">
     <h2>Login</h2>
     </div>
@@ -28,5 +31,5 @@
         <p>
     <form>
     
-</body>
-</html>
+<!-- </body>
+</html> -->
