@@ -2,15 +2,16 @@
 class reader
 {
   public function read($tableName) {
-    $userId = $_COOKIE['login'];
-
     include_once 'database.php';
+
+    $userId = $_COOKIE['login'];
     $database = new Database();
     $connectionDB = $database->ConnectToDatabase();
 
     $sql = "SELECT * FROM reviews WHERE userId='$userId'";
-
+    
     $result = $connectionDB->query($sql);
+    $dataArray["data"] = array();
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
         extract($row);

@@ -12,12 +12,13 @@
   $result = $connectionDB->query($sql);
   if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-      $resultArray[] = $row;
+      extract($row);
+      $cookie_name = "login";
+      echo $resultArray["0"];
+      setcookie($cookie_name, $id, time() + (86400 * 30), "/"); // 86400 = 1 day
+      header("Location: http://localhost:9090/SolutionStack_RE/Front-end/home.php");
     }
-    $cookie_name = "login";
-    setcookie($cookie_name, $resultArray["0"]["id"], time() + (86400 * 30), "/"); // 86400 = 1 day
-    header("Location: http://localhost:9090/SolutionStack_RE/Front-end/home.php");
   } else {
-    header("Location: http://localhost:9090/SolutionStack_RE/Front-end/login.php");
+    // header("Location: http://localhost:9090/SolutionStack_RE/Front-end/login.php");
   }
 ?>
