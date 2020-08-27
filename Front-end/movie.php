@@ -1,13 +1,17 @@
-<?php
-require "header.php";
-?>
+<!DOCTYPE html>
+<html lang="en">
 
-<div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
   <?php
-    include '../Back-end/read_user.php';
+    include '../Back-end/read_movie.php';
     $data = new reader();
     // Get movie id out of url
-    $res = $data->read("1");
+    $res = $data->read("1234");
 
     foreach ($res["data"] as $id => $content) {
       echo "<div>";
@@ -16,6 +20,5 @@ require "header.php";
       echo "</div>";
     }
   ?>
-</div>
-
+</body>
 </html>
