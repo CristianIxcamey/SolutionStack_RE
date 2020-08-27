@@ -6,13 +6,13 @@
 </head>
 <body>
     <div class="header">
-    <h2>Register</h2>
+    <h2>Login</h2>
     </div>
 
-    <form method="post" action="login.php">
+    <form method="post" action="../Back-end/login.php">
         <div class="input-group">
-            <label>Email</label>
-            <input type="text" name="email">
+            <label>username</label>
+            <input type="text" name="username">
         </div>
 
         <div class="input-group">
@@ -21,7 +21,7 @@
         </div>
 
         <div class="input-group">
-            <button type="submit" name="register" class="btn">Register</button>
+            <button type="submit" name="Login" class="btn">Login</button>
         </div>
         <p>
             Not a member yet? <a href="register.php">Sign up</a>

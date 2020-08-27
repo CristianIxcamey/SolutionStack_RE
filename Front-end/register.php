@@ -9,10 +9,10 @@
     <h2>Register</h2>
     </div>
 
-    <form method="post" action="register.php">
+    <form method="post" action="../Back-end/register.php">
         <div class="input-group">
-            <label>Email</label>
-            <input type="text" name="email">
+            <label>username</label>
+            <input type="text" name="username">
         </div>
 
         <div class="input-group">
