@@ -19,6 +19,6 @@
       header("Location: http://localhost:9090/SolutionStack_RE/Front-end/home.php");
     }
   } else {
-    // header("Location: http://localhost:9090/SolutionStack_RE/Front-end/login.php");
+    header("Location: http://localhost:9090/SolutionStack_RE/Front-end/login.php");
   }
 ?>
