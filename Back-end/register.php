@@ -2,14 +2,17 @@
   $username = $_POST["username"];
   $password = $_POST["password"];
 
-  $sql = "INSERT INTO FROM users (username, password) VALUES ('$username', '$password')";
-  $result = $connectionDB->query($sql);
-  if ($conn->query($sql) === TRUE) {
+  include_once 'database.php';
+  $database = new Database();
+  $connectionDB = $database->ConnectToDatabase();
+
+  $sql = "INSERT INTO users (id, username, password) VALUES ('2', '$username', '$password')";
+  if ($connectionDB->query($sql) === TRUE) {
     $cookie_name = "login";
     setcookie($cookie_name, $username, time() + (86400 * 30), "/"); // 86400 = 1 day
     header("Location: http://localhost:9090/SolutionStack_RE/Front-end/home.php");
   } else {
-    header("Location: http://localhost:9090/SolutionStack_RE/Front-end/login.php");
+    header("Location: http://localhost:9090/SolutionStack_RE/Front-end/register.php");
   }
-  mysqli_close($conn);
+  mysqli_close($connectionDB);
 ?>
