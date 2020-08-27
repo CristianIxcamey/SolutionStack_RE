@@ -14,8 +14,9 @@
     while($row = $result->fetch_assoc()) {
       extract($row);
       $cookie_name = "login";
-      echo $resultArray["0"];
       setcookie($cookie_name, $id, time() + (86400 * 30), "/"); // 86400 = 1 day
+      $cookie_name = "username";
+      setcookie($cookie_name, $username, time() + (86400 * 30), "/"); // 86400 = 1 day
       header("Location: http://localhost:9090/SolutionStack_RE/Front-end/home.php");
     }
   } else {

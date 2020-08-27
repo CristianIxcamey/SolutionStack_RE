@@ -3,6 +3,7 @@ require "header.php";
 include '../Back-end/read_user.php';
 $data = new reader();
 $userId = $_COOKIE['login'];
+$username = $_COOKIE['username'];
 if (!$userId) {
   header("Location: http://localhost:9090/SolutionStack_RE/Front-end/home.php");
 }
@@ -11,7 +12,6 @@ $res = $data->read($userId);
 
 <div class='username'>
   <?php
-    $username = $res['data'][0]['username'];
     echo "<h1>$username</h1>";
   ?>
 </div>
