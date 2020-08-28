@@ -69,8 +69,8 @@ $movieDescription = $movieData->overview;
         // Get movie id out of url
         $res = $data->read($movieId);
 
-        foreach ($res["data"] as $id => $content) {
-            if (count($res["data"]) > 0) {
+        if (count($res["data"]) > 0) {
+            foreach ($res["data"] as $id => $content) {
                 foreach ($res["data"] as $id => $content) {
                     echo "<div class= 'review'>";
                     echo "<h2 class='username'>$content[username]</h2>";
@@ -78,9 +78,9 @@ $movieDescription = $movieData->overview;
                     echo "<p class='reviewDescription'>$content[description]";
                     echo "</div>";
                 }
-            } else {
-                echo "<p>There are no reviews</p>";
             }
+        } else {
+            echo "<p>There are no reviews</p>";
         }
         ?>
 
