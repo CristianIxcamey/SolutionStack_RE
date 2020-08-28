@@ -1,6 +1,10 @@
 <!-- Requires and pre-load page things -->
 <?php
 require "header.php";
+
+include '../Back-end/movieAPI.php';
+$movie = new MovieApi();
+$moviesData = $movie->getTrending();
 ?>
 
 
@@ -11,32 +15,20 @@ require "header.php";
         <p>You can search for any movie you seen and write a review for it.</p>
     </div>
 
+    <h2>Popular Movies</h2>
     <div id="popular" class="outer moviesContent">
-        <h2>Popular Movies</h2>
-
-        <div class="inner">
-            <div class="movie" *ngFor='let movie of popular' [class.selected]="movie === selectedMovie"
-                (click)='select(movie)'>
-                <img src="{{imageBase}}{{size}}{{movie.poster_path}}" alt="{{movie.title}} poster" height="250">
-                <h4>{{movie.title}}</h4>
-            </div>
-        </div>
-
+        <?php
+        $temp = 0;
+        foreach ($moviesData->results as $id => $content) if ($temp++ < 10) {
+            echo "<div class='inner'>";
+            echo "<a class='movie' href='movie.php?id=$content->id'>";
+            echo "<img src='https://image.tmdb.org/t/p/original/$content->poster_path' alt='' height='250'>";
+            echo "<h4>$content->original_title</h4>";
+            echo "</a>";
+            echo "</div>";
+        }
+        ?>
     </div>
-
-    <div id="genre" class="outer moviesContent">
-        <h2>{{genreName}} <a href="/display/genre/{{genreName}}">See More ></a></h2>
-
-        <div class="inner">
-            <div class="movie" *ngFor='let movie of genre' [class.selected]="movie === selectedMovie"
-                (click)='select(movie)'>
-                <img src="{{imageBase}}{{size}}{{movie.poster_path}}" alt="{{movie.title}} poster" height="250">
-                <h4>{{movie.title}}</h4>
-            </div>
-        </div>
-    </div>
-
-    <!-- <div id="keyword" class="outer"></div> -->
 </div>
 
 <!-- Requires and pre-load page things -->
