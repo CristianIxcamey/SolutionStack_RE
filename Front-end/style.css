@@ -5,26 +5,41 @@
 
 body {
     font-size: 120%;
-    background: #F8F8FF;
+    background: pink;
 }
 
 .header {
     width: 305;
     margin: 50px auto 0px;
     color: white;
-    background: #5F9EA0;
+    background: #005c74;
     text-align: center;
-    border: 1px solid #B0C4DE;
+    border: 1px solid #c8c8c8;
     border-bottom: none;
     border-radius: 10px 10px 0px 0px;
     padding: 20px;
 }
 
-form {
+.form {
     width: 30%; 
     margin: 0px auto;
     padding: 20px;
-    border: 1px soild #B0C4DE;
+    border: 1px soild #c8c8c8;
     background: white;
     border-radius: 0px 0px 10px 10px;
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #00495c;
+    color: white;
+    text-align: center;
+ }
+
+ .nav {
+     background-color: teal;
+ }
