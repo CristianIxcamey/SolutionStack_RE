@@ -1,19 +1,14 @@
+
 <div class="container">
   <nav>
     <div id="Home"><a href="home.php">Review Everything!</a></div>
 
     <div id="searchBox">
-        <form action="../Back-end/search.php" method="post">
-        <!-- dropdown to select what you are searching by -->
-        <select id="searchBy" name="searchBy">
-            <option value="title" >Title</option>
-            <option value="actor">Actor</option>
-            <option value="genre">Genre</option>
-        </select>
-
+        <form action="./results.php" method="post">
         <!-- input to search movies -->
         <input id='movieSearch' name="title" placeholder="Search" type="text" required>
         <button id="sBtn" type="submit">Search</button>
+
         </form>
     </div>
 
