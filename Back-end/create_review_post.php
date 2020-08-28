@@ -11,5 +11,5 @@ $reviewer = new reviewCreator();
 
 $res = $reviewer->writeReview($review, $_POST['userId']);
 
-header("Location: http://localhost:9090/SolutionStack_RE/Front-end/movie.php");
-// header("Location: http://sample:8008/ReviewEverythin/SolutionStack_RE/Front-end/movie.php");
+header("Location: http://localhost:9090/SolutionStack_RE/Front-end/movie.php?id=".$_POST['movieid']);
+// header("Location: http://sample:8008/ReviewEverythin/SolutionStack_RE/Front-end/movie.php?id=".$_POST['movieid']);

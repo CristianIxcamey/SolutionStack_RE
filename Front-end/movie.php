@@ -8,7 +8,11 @@
 </head>
 
 <?php
+require "header.php";
 $movieId = $_GET['id'];
+if (!$movieId) {
+    header("Location: http://localhost:9090/SolutionStack_RE/Front-end/results.php");
+}
 include '../Back-end/movieAPI.php';
 $movie = new MovieApi();
 $movieData = $movie->getMovieData($movieId);
@@ -56,12 +60,17 @@ $movieDescription = $movieData->overview;
     // Get movie id out of url
     $res = $data->read($movieId);
 
-    foreach ($res["data"] as $id => $content) {
-        echo "<div>";
-        echo "<h3 class='reviewTitle'>$content[username] - $content[rating] out of 5 stars</h3>";
-        echo "<p class='reviewDescription'>$content[description]";
-        echo "</div>";
+    if (count($res["data"]) > 0) {
+        foreach ($res["data"] as $id => $content) {
+            echo "<div>";
+            echo "<h3 class='reviewTitle'>$content[username] - $content[rating] out of 5 stars</h3>";
+            echo "<p class='reviewDescription'>$content[description]";
+            echo "</div>";
+        }
+    } else {
+      echo "<p>There are no reviews</p>";
     }
+
     ?>
 
 </body>
