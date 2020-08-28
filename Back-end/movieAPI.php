@@ -24,6 +24,12 @@ class MovieApi{
         return $movies;
     }
 
+    public function getTrending()
+    {
+        $movies = file_get_contents("https://api.themoviedb.org/3/discover/movie?api_key=917bf8547464514e193b8bc4841df69c&sort_by=popularity.desc");
+        $movies = json_decode($movies);
+        return $movies;
+    }
 
 }
 
