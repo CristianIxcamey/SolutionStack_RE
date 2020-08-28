@@ -5,7 +5,7 @@
     <div id="searchBox">
       <form action="./results.php" method="post">
         <!-- input to search movies -->
-        <input id='movieSearch' name="title" placeholder="Search" type="text" required>
+        <input id='movieSearch' name="title" placeholder="Search" type="text" required autocomplete="off">
         <button id="sBtn" type="submit">Search</button>
 
       </form>

@@ -1,7 +1,8 @@
 <?php
 class reader
 {
-  public function read($tableName) {
+  public function read($tableName)
+  {
     include_once 'database.php';
 
     $userId = $_COOKIE['login'];
@@ -9,7 +10,7 @@ class reader
     $connectionDB = $database->ConnectToDatabase();
 
     $sql = "SELECT * FROM reviews WHERE userId='$userId'";
-    
+
     $result = $connectionDB->query($sql);
     $dataArray["data"] = array();
     if ($result->num_rows > 0) {
@@ -19,6 +20,7 @@ class reader
           "id" => $id,
           "movieId" => $movieId,
           "userId" => $userId,
+          "movieName" => $movieName,
           "username" => $username,
           "rating" => $rating,
           "description" => $description,
@@ -31,4 +33,3 @@ class reader
     }
   }
 }
-?>

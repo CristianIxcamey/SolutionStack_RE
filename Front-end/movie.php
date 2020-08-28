@@ -52,7 +52,7 @@ $movieDescription = $movieData->overview;
                     <option value="5">5</option>
                 </select>
             </div>
-            <input class="textInput" type="textarea" name="reviewMessage" placeholder="Review Message">
+            <input class="textInput" type="textarea" name="reviewMessage" placeholder="Review Message" autocomplete="off">
             <input type='hidden' name='userId' value='<?php echo "$userId"; ?>' />
             <input type='hidden' name='movieid' value='<?php echo "$movieId"; ?>' />
             <input type='hidden' name='movieName' value='<?php echo "$movieName"; ?>' />
