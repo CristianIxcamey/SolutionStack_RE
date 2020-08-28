@@ -9,9 +9,10 @@ $movie = new MovieApi();
 $movieData = $movie->getMovies($search);
 $results = $movieData->results;
 ?>
-
-<h1 id="banner">Showing Results for <?php echo $search ?></h1>
-<ul id='allMovies'>
+<div class="top">
+<h1 id="banner" class="homeHeader">Showing Results for <?php echo $search ?></h1>
+</div>
+<div id="popular" class="moviesContent">
 <?php
 foreach($results as $movie){
 
@@ -20,24 +21,24 @@ $movieName = $movie->original_title;
 $moviePoster = "https://image.tmdb.org/t/p/original".$movie->poster_path;
 $movieId = $movie->id;
 
-echo     "<li *ngFor='let movie of list' [class.selected]='movie === selectedMovie' class='movie'>";
-//     <!-- printing list of movies that are clickable  -->
-echo         "<div class='clickableMovie'>";
-echo "<a href='movie.php?id=$movieId>'";
-echo             "<div class='moviePosterSection' *ngIf='movie.poster_path != null; else defaultPoster'>";
-echo                 "<img class='poster' src=$moviePoster alt='$movieName poster'
-                     height='150' weight='75' />";
-echo             '</div>';
+if (strlen($movieName)>19) {
+    $movieName = substr($movieName, 0, 19);
+    $movieName = $movieName.'...';
+}
+
+echo "<div class='inner'>";
+echo "<a class='movie' href='movie.php?id=$movieId'>";
+echo "<img class='homeMoviePoster' src='$moviePoster' alt='$movieName poster'>";
+echo "<h4 class='homeMovieTitle'>$movieName</h4>";
 echo "</a>";
+echo "</div>";
 
-
-echo             "<h2 class='movieTitle'>$movieName</h2>";
-echo             '</div>';
-echo     '</li>';
 }
 ?>
-</ul>
+</div>
 
-</body>
 
-</html>
+<!-- Requires and pre-load page things -->
+<?php
+require "footer.php";
+?>
