@@ -7,7 +7,7 @@ header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Credentials: true");
 
 //this imports the connector as well as the contractor class 
-include_once '../Back-end/database.php';
+include_once 'database.php';
 class reviewCreator
 {
 

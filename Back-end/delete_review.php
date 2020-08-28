@@ -1,16 +1,13 @@
 <?php
-
-
-//this imports the connector as well as the contractor class 
-include_once './database.php';
 class reviewDelete
 {
-
+    
     /**
      * $movieReview Structure = { movieId: S, rating: N, reviewMessage: S}
      */
     public function deleteReview($reviewId)
     {
+        include_once 'database.php';
         $database = new Database();
         $connectionDB = $database->ConnectToDatabase();
         $sql = "DELETE FROM `reviews` WHERE `id` = '" . $reviewId . "'";

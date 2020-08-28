@@ -9,10 +9,10 @@
 
 <body>
     <?php
-    $userId = "newUser123";
+    $userId = "1";
     $movieid = "newMovie123";
     $movieName = "Kong";
-    $username = "newUsername";
+    $username = "test1";
 
     ?>
 
@@ -38,12 +38,12 @@
     // Get movie id out of url
     $res = $data->read("newMovie123");
 
-    foreach ($res["data"] as $id => $content) {
-        echo "<div>";
-        echo "<h3 class='reviewTitle'>$content[username] - $content[rating] out of 5 stars</h3>";
-        echo "<p class='reviewDescription'>$content[description]";
-        echo "</div>";
-    }
+    // foreach ($res["data"] as $id => $content) {
+    //     echo "<div>";
+    //     echo "<h3 class='reviewTitle'>$content[username] - $content[rating] out of 5 stars</h3>";
+    //     echo "<p class='reviewDescription'>$content[description]";
+    //     echo "</div>";
+    // }
     ?>
 
 </body>
