@@ -8,22 +8,27 @@ $moviesData = $movie->getTrending();
 ?>
 
 
-<div class="page">
+<div class="homePage">
 
     <div class="top">
         <h1>Welcome to Review Everything</h1>
         <p>You can search for any movie you seen and write a review for it.</p>
     </div>
 
-    <h2>Popular Movies</h2>
-    <div id="popular" class="outer moviesContent">
+    <h2 class="homeHeader">Popular Movies</h2>
+    <div id="popular" class="moviesContent">
         <?php
         $temp = 0;
-        foreach ($moviesData->results as $id => $content) if ($temp++ < 10) {
+        foreach ($moviesData->results as $id => $content) if ($temp++ < 12) {
+            $title = $content->original_title;
+            if (strlen($title)>19) {
+                $title = substr($title, 0, 19);
+                $title = $title.'...';
+            }
             echo "<div class='inner'>";
             echo "<a class='movie' href='movie.php?id=$content->id'>";
-            echo "<img src='https://image.tmdb.org/t/p/original/$content->poster_path' alt='' height='250'>";
-            echo "<h4>$content->original_title</h4>";
+            echo "<img class='homeMoviePoster' src='https://image.tmdb.org/t/p/original/$content->poster_path' alt=''>";
+            echo "<h4 class='homeMovieTitle'>$title</h4>";
             echo "</a>";
             echo "</div>";
         }

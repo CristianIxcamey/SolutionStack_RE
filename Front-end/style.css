@@ -20,6 +20,40 @@ body {
     padding: 20px;
 }
 
+.homePage {
+    text-align: center;
+}
+
+.homeHeader {
+    
+}
+
+.moviesContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
+
+.homeMoviePoster {
+    width: 200px;
+}
+
+.inner {
+    margin: 10px;
+    background-color: darkgrey;
+}
+
+.movie {
+    text-decoration: none;
+}
+
+.homeMovieTitle {
+    color: #000;
+    text-align: center;
+}
+
 form {
     width: 30%; 
     margin: 0px auto;
