@@ -1,15 +1,14 @@
-
 <div class="container">
   <nav>
     <div id="Home"><a href="home.php">Review Everything!</a></div>
 
     <div id="searchBox">
-        <form action="./results.php" method="post">
+      <form action="./results.php" method="post">
         <!-- input to search movies -->
         <input id='movieSearch' name="title" placeholder="Search" type="text" required>
         <button id="sBtn" type="submit">Search</button>
 
-        </form>
+      </form>
     </div>
 
 
