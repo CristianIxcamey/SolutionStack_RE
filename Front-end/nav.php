@@ -1,6 +1,6 @@
 <div class="container">
   <nav>
-    <div id="Home"><a href="home.php">Review Everything!</a></div>
+    <div id="Home"><a class="link" href="home.php">Review Everything!</a></div>
 
     <div id="searchBox">
       <form action="./results.php" method="post">
@@ -13,9 +13,9 @@
 
 
     <div id="lisu" *ngIf='loggedin==false'>
-      <div id="login"><a href="login.php">Login</a></div>
-      <div id="signup"><a href="register.php">Sign Up</a></div>
-      <div id="profile"><a href="profile.php">Profile</a></div>
+      <div id="login"><a class="link" href="login.php">Login</a></div>
+      <div id="signup"><a class="link" href="register.php">Sign Up</a></div>
+      <div id="profile"><a class="link" href="profile.php">Profile</a></div>
     </div>
   </nav>
 </div>
