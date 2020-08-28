@@ -9,9 +9,11 @@
 $start = 'https://api.themoviedb.org/3/';
 $key = '?api_key=917bf8547464514e193b8bc4841df69c';
 
-class MovieApi{
+class MovieApi
+{
 
-    public function getMovies($search){
+    public function getMovies($search)
+    {
         $movies = file_get_contents("https://api.themoviedb.org/3/search/movie?api_key=917bf8547464514e193b8bc4841df69c&query={$search}");
         $movies = json_decode($movies);
         return $movies;
@@ -19,7 +21,7 @@ class MovieApi{
 
     public function getMovieData($id)
     {
-        $movies = file_get_contents("https://api.themoviedb.org/3/movie/530915?api_key=917bf8547464514e193b8bc4841df69c");
+        $movies = file_get_contents("https://api.themoviedb.org/3/movie/" . $id . "?api_key=917bf8547464514e193b8bc4841df69c");
         $movies = json_decode($movies);
         return $movies;
     }
@@ -30,8 +32,4 @@ class MovieApi{
         $movies = json_decode($movies);
         return $movies;
     }
-
 }
-
-
-?>

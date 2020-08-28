@@ -68,8 +68,7 @@ $movieDescription = $movieData->overview;
         $data = new reader();
         // Get movie id out of url
         $res = $data->read($movieId);
-
-        if (count($res["data"]) > 0) {
+        if ($res) {
             foreach ($res["data"] as $id => $content) {
                 foreach ($res["data"] as $id => $content) {
                     echo "<div class= 'review'>";
